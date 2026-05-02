@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
-import { ShoppingCart, User, LogOut, Package, LayoutDashboard, Menu, X, Zap } from 'lucide-react';
+import { ShoppingCart, User, LogOut, Package, LayoutDashboard, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
 const Navbar = () => {
@@ -23,11 +23,11 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg flex items-center justify-center shadow-lg shadow-primary-900/50 group-hover:shadow-primary-500/40 transition-all duration-300">
-              <Zap className="w-5 h-5 text-white" />
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center overflow-hidden shadow-lg shadow-primary-900/50 group-hover:scale-110 transition-all duration-300">
+              <img src="/favicon.png" alt="NexShop" className="w-full h-full object-cover" />
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-              NexShop
+            <span className="text-xl font-black bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+              Nex<span className="text-primary-500">Shop</span>
             </span>
           </Link>
 
