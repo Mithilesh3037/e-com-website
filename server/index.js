@@ -48,13 +48,17 @@ const startServer = async () => {
     await sequelize.sync({ alter: true });
     console.log('✅ Models synchronized');
 
-    app.listen(PORT, () => {
-      console.log(`🚀 Server running on http://localhost:${PORT}`);
-    });
+    if (process.env.NODE_ENV !== 'production') {
+      app.listen(PORT, () => {
+        console.log(`🚀 Server running on http://localhost:${PORT}`);
+      });
+    }
   } catch (err) {
     console.error('❌ Failed to start server:', err);
-    process.exit(1);
+    if (process.env.NODE_ENV !== 'production') process.exit(1);
   }
 };
 
 startServer();
+
+module.exports = app;
