@@ -70,6 +70,17 @@ npm install
 npm run dev      # Starts on http://localhost:5173
 ```
 
+## 🚀 Vercel Deployment
+
+This project is configured for easy deployment on Vercel:
+
+1.  **Push to GitHub:** (Already done!)
+2.  **Import to Vercel:** Go to the Vercel dashboard and import your repo.
+3.  **Environment Variables:** Add `JWT_SECRET` and `NODE_ENV=production` in the Vercel project settings.
+4.  **Database Note:** Since Vercel is serverless, the **SQLite database is read-only**. For production, you must use a real MySQL database (like PlanetScale or Vercel Postgres) and set `USE_MYSQL=true` with the corresponding connection variables.
+
+The `vercel.json` file handles all the routing between your React frontend and Node.js backend automatically.
+
 ## Demo Accounts
 
 | Role  | Email                | Password  |
